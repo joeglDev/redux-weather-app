@@ -1,9 +1,12 @@
 import './App.css';
+import { Intro } from './components/Intro';
+import { Location } from './components/Location';
 
 function App() {
   return (
     <>
-    <h1>hi</h1>
+    <Intro></Intro>
+    <Location></Location>
     </>
   );
 }
