@@ -66,19 +66,32 @@ export const Location = () => {
   const getWeatherData = (e: React.MouseEvent) => {
     e.preventDefault();
     //filter city objects to get lattitude and longitude of target
-    const location = possibleLocations.filter((city) => {
-      if (city.id === parseInt(selectedLocation)) {
-        return city;
-      }
-    });
-    const finalLocation = {
-      name: location[0].name,
-      country: location[0].country,
-      latitude: location[0].latitude,
-      longitude: location[0].longitude,
-    };
-    //assign this object to redux state
-    dispatch(updateCurrentLocation(finalLocation))
+    if (selectedLocation === "") {
+      const finalLocation = {
+        name: possibleLocations[0].name,
+        country: possibleLocations[0].country,
+        latitude: possibleLocations[0].latitude,
+        longitude: possibleLocations[0].longitude,
+      };
+      //assign this object to redux state
+      dispatch(updateCurrentLocation(finalLocation));
+    }  else {
+      const location = possibleLocations.filter((city) => {
+        if (city.id === parseInt(selectedLocation)) {
+          return city;
+        }
+      });
+
+      const finalLocation = {
+        name: location[0].name,
+        country: location[0].country,
+        latitude: location[0].latitude,
+        longitude: location[0].longitude,
+      };
+      //assign this object to redux state
+      dispatch(updateCurrentLocation(finalLocation));
+     
+    }
   };
 
   return (
@@ -101,8 +114,7 @@ export const Location = () => {
           id="location__select"
           onChange={(e) => {
             setSelectedLocation(e.target.value);
-          }}
-        >
+          }}>
           {possibleLocations.map((location) => {
             return (
               <option
