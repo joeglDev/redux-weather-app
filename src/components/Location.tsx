@@ -4,6 +4,7 @@ import { fetchLocation } from "../models/apiQueries";
 import { locationData } from "../../interfaces";
 import { useAppDispatch } from "../app/hooks";
 import { updateCurrentLocation } from "../features/location/locationSlice";
+import { Button, MenuItem, Select } from "@mui/material";
 
 export const Location = () => {
   //redux states
@@ -15,7 +16,7 @@ export const Location = () => {
   // types location for initial search
   const [location, setLocation] = useState("");
   // selected final location id
-  const [selectedLocation, setSelectedLocation] = useState("");
+  const [selectedLocation, setSelectedLocation] = useState("Default");
   //array of returned location objects
   const [possibleLocations, setPossibleLocations] = useState([
     {
@@ -93,7 +94,13 @@ export const Location = () => {
 
   return (
     <section>
-      <h2 className={isError ? "location__h2__error" : "location__h2__error hidden"}>Location not found. Please check spelling and try again.</h2>
+      <h2
+        className={
+          isError ? "location__h2__error" : "location__h2__error hidden"
+        }
+      >
+        Location not found. Please check spelling and try again.
+      </h2>
       <form>
         <label htmlFor="location__input">Location: </label>
         <input
@@ -103,12 +110,19 @@ export const Location = () => {
             setLocation(e.target.value);
           }}
         ></input>
-        <button aria-label="search weather" onClick={handleSubmit}>
-          Search
-        </button>
+        <Button
+          variant="contained"
+          color="primary"
+          aria-label="search location"
+          onClick={handleSubmit}
+        >
+          Search Location
+        </Button>
 
         <label htmlFor="location__select">Select your city</label>
-        <select
+        <Select
+        value={""}
+        label="location__select"
           id="location__select"
           onChange={(e) => {
             setSelectedLocation(e.target.value);
@@ -116,19 +130,23 @@ export const Location = () => {
         >
           {possibleLocations.map((location) => {
             return (
-              <option
+              <MenuItem
                 key={location.id}
                 value={location.id}
-              >{`${location.name}, ${location.country}`}</option>
+              >{`${location.name}, ${location.country}`}
+              </MenuItem>
             );
           })}
-        </select>
-        <button
+        </Select>
+
+        <Button
+          variant="contained"
+          color="primary"
           aria-label="get weather for this location"
           onClick={pickSpecificLocation}
         >
           Get the weather
-        </button>
+        </Button>
       </form>
     </section>
   );
