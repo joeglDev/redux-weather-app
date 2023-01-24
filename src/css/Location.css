@@ -4,3 +4,12 @@
     margin-right: auto;
 }
 
+.location__h2__error {
+    text-align: center;
+    margin: 2vh;
+}
+
+.hidden {
+    display: none;
+}
+

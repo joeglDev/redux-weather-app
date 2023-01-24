@@ -2,23 +2,16 @@ import React, { useState } from "react";
 import "../css/Location.css";
 import { fetchLocation } from "../models/apiQueries";
 import { locationData } from "../../interfaces";
-import { useAppSelector, useAppDispatch } from "../app/hooks";
-import type { RootState } from '../app/store';
+import { useAppDispatch } from "../app/hooks";
 import { updateCurrentLocation } from "../features/location/locationSlice";
 
 export const Location = () => {
-
   //redux states
-   /**
-   * Gets location state from redux store.
-   */
-   const currentLocation = useAppSelector((state: RootState) => {
-    return state;
-  });
-
 
   //states
 
+  //errir for get location api query
+  const [isError, setIsError] = useState(false);
   // types location for initial search
   const [location, setLocation] = useState("");
   // selected final location id
@@ -55,7 +48,12 @@ export const Location = () => {
   const handleSubmit = async (e: React.MouseEvent) => {
     e.preventDefault();
     const fetchedData: locationData[] = await fetchLocation(location);
-    setPossibleLocations(fetchedData);
+    if (fetchedData) {
+      setPossibleLocations(fetchedData);
+      setIsError(false);
+    } else {
+      setIsError(true);
+    }
   };
 
   /**
@@ -75,7 +73,7 @@ export const Location = () => {
       };
       //assign this object to redux state
       dispatch(updateCurrentLocation(finalLocation));
-    }  else {
+    } else {
       const location = possibleLocations.filter((city) => {
         if (city.id === parseInt(selectedLocation)) {
           return city;
@@ -90,12 +88,12 @@ export const Location = () => {
       };
       //assign this object to redux state
       dispatch(updateCurrentLocation(finalLocation));
-     
     }
   };
 
   return (
     <section>
+      <h2 className={isError ? "location__h2__error" : "location__h2__error hidden"}>Location not found. Please check spelling and try again.</h2>
       <form>
         <label htmlFor="location__input">Location: </label>
         <input
@@ -114,7 +112,8 @@ export const Location = () => {
           id="location__select"
           onChange={(e) => {
             setSelectedLocation(e.target.value);
-          }}>
+          }}
+        >
           {possibleLocations.map((location) => {
             return (
               <option
