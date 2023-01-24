@@ -8,6 +8,7 @@ This weather app greatly improves upon my last attempt by encorporating a differ
 - TypeScript replaces JavaScript.
 - React replaces plain HTML / JavaScript.
 - Redux-toolkit for state management.
+- A mixture of Material UI library alongside plain CSS.
 
 ## Run locally
 
@@ -19,3 +20,4 @@ In console run the command `npm i` then `npm run start`.
 - React: V 18.2.0
 - Redux-toolkit: V 1.9.1
 - React-redux: V 8.0.5
+- MUI Material: V 5.11.6
