@@ -61,7 +61,7 @@ export const Location = () => {
    *
    * @param {React.MouseEvent} e - react mouseclick event
    */
-  const getWeatherData = (e: React.MouseEvent) => {
+  const pickSpecificLocation = (e: React.MouseEvent) => {
     e.preventDefault();
     //filter city objects to get lattitude and longitude of target
     if (selectedLocation === "") {
@@ -125,7 +125,7 @@ export const Location = () => {
         </select>
         <button
           aria-label="get weather for this location"
-          onClick={getWeatherData}
+          onClick={pickSpecificLocation}
         >
           Get the weather
         </button>
