@@ -2,7 +2,6 @@ import { useAppSelector } from "../app/hooks";
 import type { RootState } from '../app/store';
 import Card from '@mui/material/Card';
 import { CardContent, Typography } from "@mui/material";
-import { green } from "@mui/material/colors";
 
 
 export const CurrentLocationBlock = () => {
