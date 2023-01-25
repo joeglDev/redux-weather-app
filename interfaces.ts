@@ -27,7 +27,7 @@ export interface currentWeatherType {
   temperature: number;
   windspeed: number;
   winddirection: number;
-  weathercode: number;
+  weathercode: number | string;
   time: string;
 }
 
