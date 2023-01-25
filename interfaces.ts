@@ -17,8 +17,27 @@ export interface locationData {
 }
 
 export interface locationType {
-  name: string,
-      country: string,
-      latitude: number,
-      longitude: number,
+  name: string;
+  country: string;
+  latitude: number;
+  longitude: number;
+}
+
+export interface currentWeatherType {
+  temperature: number;
+  windspeed: number;
+  winddirection: number;
+  weathercode: number;
+  time: string;
+}
+
+export interface weatherType {
+  latitude: number;
+  longitude: number;
+  generationtime_ms: number;
+  utc_offset_seconds: number;
+  timezone: string;
+  timezone_abbreviation: string;
+  elevation: number;
+  current_weather: currentWeatherType;
 }
