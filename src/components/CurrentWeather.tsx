@@ -8,6 +8,7 @@ import { updateCurrentWeather } from "../features/weather/currentWeatherSlice";
 
 export const CurrentWeather = () => {
   //redux states
+  
   /**
    * Gets location state from redux store.
    */
