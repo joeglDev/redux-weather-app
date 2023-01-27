@@ -13,7 +13,7 @@ export const rainfallSlice = createSlice({
   initialState,
   //hook actions = reducers
   reducers: {
-    //reducer to add a update location
+    //reducer to add a update rainfall array.
 
     updateRainfall: (state: number[], action: PayloadAction<number[]>) => {
       return [...action.payload];
