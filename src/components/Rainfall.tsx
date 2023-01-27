@@ -4,12 +4,15 @@ import { useAppSelector, useAppDispatch } from "../app/hooks";
 import type { RootState } from "../app/store";
 import { updateRainfall } from "../features/rainfall/rainfallSlice";
 import { fetchRainfall } from "../models/apiQueries";
+//chart js
+import "chart.js/auto";
+import { Bar } from "react-chartjs-2";
 
 export const Rainfall = () => {
   //redux states
   /**
    * Gets location state from redux store.
-   * 
+   *
    * @returns {locationType} - Object represnting a specific location.
    */
   const currentLocation = useAppSelector((state: RootState) => {
@@ -18,13 +21,13 @@ export const Rainfall = () => {
 
   /**
    * Gets rainfall state state from redux store.
-   * 
+   *
    * @returns {number[]} Array representing rainfall values of the day from midnight to 11pm
    */
   const currentRainfall = useAppSelector((state: RootState) => {
     return state.rainfall;
   });
-  console.log("STATE:", currentRainfall);
+  console.log(currentRainfall);
 
   //variables
   const dispatch = useAppDispatch();
@@ -37,11 +40,63 @@ export const Rainfall = () => {
         currentLocation.longitude
       );
       const todaysRainfallArr = fetchedData.hourly.precipitation.slice(0, 24);
-      //assign to state
+      //assign to redux state
       dispatch(updateRainfall(todaysRainfallArr));
     };
     currentRainfall();
   }, [currentLocation, dispatch]);
+
+  //Bar chart
+  const options = {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: "top" as const,
+      },
+      title: {
+        display: true,
+        text: "Today's Rainfall",
+      },
+    },
+  };
+
+  const labels = [
+    "00:00",
+    "01:00",
+    "02:00",
+    "03:00",
+    "04:00",
+    "05:00",
+    "06:00",
+    "07:00",
+    "08:00",
+    "09:00",
+    "10:00",
+    "11:00",
+    "12:00",
+    "13:00",
+    "14:00",
+    "15:00",
+    "16:00",
+    "17:00",
+    "18:00",
+    "19:00",
+    "20:00",
+    "21:00",
+    "22:00",
+    "24:00",
+  ];
+
+  const data = {
+    labels,
+    datasets: [
+      {
+        label: "Rainfall/ mm",
+        data: currentRainfall,
+        backgroundColor: "#4169E1",
+      },
+    ],
+  };
 
   return (
     <section>
@@ -49,7 +104,9 @@ export const Rainfall = () => {
         <CardContent
           style={{ backgroundColor: "#18191a" }}
           sx={{ width: "30rem", height: "15rem" }}
-        ></CardContent>
+        >
+          <Bar options={options} data={data} />
+        </CardContent>
       </Card>
     </section>
   );

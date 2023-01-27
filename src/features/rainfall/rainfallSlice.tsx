@@ -4,7 +4,7 @@ import type { PayloadAction } from "@reduxjs/toolkit";
 
 // Define the initial state using that type
 const initialState: number[] = [
-  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 1, 2, 4, 4, 5, 4, 4, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0,
 ];
 
 export const rainfallSlice = createSlice({
