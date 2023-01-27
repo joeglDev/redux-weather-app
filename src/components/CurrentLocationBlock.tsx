@@ -9,6 +9,8 @@ export const CurrentLocationBlock = () => {
       //redux states
    /**
    * Gets location state from redux store.
+   * 
+   * * @returns {locationType} - Object represnting a specific location.
    */
    const currentLocation = useAppSelector((state: RootState) => {
     return state.location;

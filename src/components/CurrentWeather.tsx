@@ -11,6 +11,8 @@ export const CurrentWeather = () => {
   
   /**
    * Gets location state from redux store.
+   * 
+   * * @returns {locationType} - Object represnting a specific location.
    */
   const currentLocation = useAppSelector((state: RootState) => {
     return state.location;
@@ -19,6 +21,8 @@ export const CurrentWeather = () => {
 
    /**
    * Gets currentWeather state from redux store.
+   * 
+   * @returns {currentWeatherType} - Object representing current weather.
    */
    const currentWeather = useAppSelector((state: RootState) => {
     return state.currentWeather;
