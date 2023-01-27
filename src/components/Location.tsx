@@ -78,7 +78,7 @@ export const Location = () => {
       const location = possibleLocations.filter((city) => {
         if (city.id === parseInt(selectedLocation)) {
           return city;
-        }
+        } else return null
       });
 
       const finalLocation = {
@@ -101,7 +101,7 @@ export const Location = () => {
       >
         Location not found. Please check spelling and try again.
       </h2>
-      <form>
+      <form className="Location__form">
         <label htmlFor="location__input">Location: </label>
         <input
           id="location__input"

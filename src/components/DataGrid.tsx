@@ -1,4 +1,4 @@
-import Grid2 from "@mui/material/Unstable_Grid2/Grid2"
+import Grid from "@mui/material/Unstable_Grid2/Grid2"
 import { CurrentLocationBlock } from "./CurrentLocationBlock"
 import { CurrentWeather } from "./CurrentWeather"
 
@@ -6,10 +6,10 @@ export const DataGrid = () => {
 
     return (
         <section>
-            <Grid2>
+            <Grid container spacing={2} justifyContent="center">
                 <CurrentLocationBlock></CurrentLocationBlock>
                 <CurrentWeather></CurrentWeather>
-            </Grid2>
+            </Grid>
         </section>
     )
 }

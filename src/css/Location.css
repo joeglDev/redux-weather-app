@@ -13,3 +13,16 @@
     display: none;
 }
 
+.Location__form {
+   display: inline-block;
+   margin: auto 12rem auto 12rem;
+   width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+    .Location__form {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+    }
+}

@@ -62,41 +62,34 @@ export const CurrentWeather = () => {
 
   return (
     <section>
-      <Card />
-      <CardContent style={{ backgroundColor: "#18191a" }}>
+      <Card className="currentweather__section__card"/>
+      <CardContent style={{ backgroundColor: "#18191a" }}  sx={{width: '15rem', height: '15rem'}}>
         <Typography
-          style={{ backgroundColor: "#18191a", color: "white" }}
-          variant="subtitle1"
+          style={{ backgroundColor: "#18191a", color: "white", fontSize: 30 }}
+          variant="h1"
         >
           Today's weather forecast
         </Typography>
 
         <Typography
-          style={{ backgroundColor: "#18191a", color: "white" }}
+          style={{ backgroundColor: "#18191a", color: "white", fontSize: 40, textAlign: 'center'}}
           variant="body1"
         >
-          {`Temperature: ${currentWeather.temperature}'C`}
+          {`${currentWeather.temperature}℃`}
         </Typography>
 
         <Typography
-          style={{ backgroundColor: "#18191a", color: "white" }}
+          style={{ backgroundColor: "#18191a", color: "white", fontSize: 20, textAlign: 'center' }}
           variant="body1"
         >
-          {`Wind Direction: ${currentWeather.winddirection}'`}
+          {`💨 ${currentWeather.winddirection}' / ${currentWeather.windspeed} km/h`}
         </Typography>
 
         <Typography
-          style={{ backgroundColor: "#18191a", color: "white" }}
-          variant="body1"
+          style={{ backgroundColor: "#18191a", color: "white", fontSize: 20, textAlign: 'center' }}
+          variant="subtitle1"
         >
-          {`Windspeed: ${currentWeather.windspeed} Km/h`}
-        </Typography>
-
-        <Typography
-          style={{ backgroundColor: "#18191a", color: "white" }}
-          variant="body1"
-        >
-          {`Weather: ${currentWeather.weathercode}`}
+          {`${currentWeather.weathercode}`}
         </Typography>
     
       </CardContent>

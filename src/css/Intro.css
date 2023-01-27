@@ -1,5 +1,12 @@
 h1 {
     text-align: center;
-    font-size: 2vw;
+    font-size: 3vw;
     margin: 2vh;
+}
+
+@media only screen and (max-width: 600px) {
+
+    h1 {
+        font-size: 5vw;
+    }
 }
