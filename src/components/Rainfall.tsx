@@ -1,5 +1,4 @@
-// do not render bar chart if no rainfall?
-
+//add table for rainfall
 import { useEffect, useState } from "react";
 import { useAppSelector, useAppDispatch } from "../app/hooks";
 import type { RootState } from "../app/store";
