@@ -21,7 +21,7 @@ In console run the command `npm i` then `npm run start`.
 - Redux-toolkit: V 1.9.1
 - React-redux: V 8.0.5
 - MUI Material: V 5.11.6
-- React Chart JS 2: V 5.2.0
+- React-vis: V 1.11.12
 
 ## Notes
 
