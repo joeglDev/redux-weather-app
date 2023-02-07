@@ -4,9 +4,6 @@ import type { RootState } from "../app/store";
 import { updateRainfall } from "../features/rainfall/rainfallSlice";
 import { fetchRainfall } from "../models/apiQueries";
 import '../css/Rainfall.css';
-//chart js
-import "chart.js/auto";
-import { Bar } from "react-chartjs-2";
 import { Card, CardContent } from "@mui/material";
 
 export const Rainfall = () => {
@@ -46,25 +43,9 @@ export const Rainfall = () => {
     currentRainfall();
   }, [currentLocation, dispatch]);
 
-  //Bar chart
-  const options = {
-    responsive: true,
-    
-    plugins: {
-      legend: {
-        position: "top" as const,
-      },
-      title: {
-        display: true,
-        text: "Today's Rainfall",
-        color: 'white',
-      },
-     
-        labels: {font: {fontColor: 'white'},}
-    
-    },
-  };
-
+  
+  
+/*
   const labels = [
     "00:00",
     "01:00",
@@ -91,41 +72,17 @@ export const Rainfall = () => {
     "22:00",
     "24:00",
   ];
-
-  const data = {
-    labels,
-    datasets: [
-      {
-        label: "Rainfall/ mm",
-        data: currentRainfall,
-        backgroundColor: "#4169E1",
-      },
-    ],
+*/
   
-  };
-
-  const plugin = [{
-    beforeDraw: function(Bar: any) {
-      const ctx = Bar.ctx;
-
-      const chartArea = Bar.chartArea;
-
   
-      // Chart background
+  
      
-    
-      ctx.fillStyle = '#18191a';
-      ctx.fillRect(chartArea.left - chartArea.left, 8 * (chartArea.left) ,
-        chartArea.right , -10*(chartArea.top) );
-    }, 
-    id: 'Bar',
-  }];
 
   return (
     <section>
      <Card style={{ border: "none", boxShadow: "none" }}>
       <CardContent style={{backgroundColor:'#18191a' }} sx={{width: '30rem', height: '15rem'}}>
-          <Bar plugins={plugin} options={options} data={data} />
+          
           </CardContent>
           </Card>
     </section>
