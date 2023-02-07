@@ -1,17 +1,15 @@
 // do not render bar chart if no rainfall?
 
-import { useEffect} from "react";
+import { useEffect } from "react";
 import { useAppSelector, useAppDispatch } from "../app/hooks";
 import type { RootState } from "../app/store";
 import { updateRainfall } from "../features/rainfall/rainfallSlice";
 import { fetchRainfall } from "../models/apiQueries";
 import "../css/Rainfall.css";
-import { Card, CardContent } from "@mui/material";
+import { Card } from "@mui/material";
 import { RainfallBarChart } from "./RainfallBarChart";
 
-
 export const Rainfall = () => {
-
   //redux states
   /**
    * Gets location state from redux store.
@@ -21,7 +19,7 @@ export const Rainfall = () => {
   const currentLocation = useAppSelector((state: RootState) => {
     return state.location;
   });
-  
+
   //variables
   const dispatch = useAppDispatch();
 
@@ -39,17 +37,10 @@ export const Rainfall = () => {
     currentRainfall();
   }, [currentLocation, dispatch]);
 
-
-
   return (
     <section>
       <Card style={{ border: "none", boxShadow: "none" }}>
-      <CardContent
-        style={{ backgroundColor: "#18191a" }}
-        sx={{ width: "75rem", height: "15rem" }}
-      >
-       <RainfallBarChart></RainfallBarChart>
-       </CardContent>
+        <RainfallBarChart></RainfallBarChart>
       </Card>
     </section>
   );

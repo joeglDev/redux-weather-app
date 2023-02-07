@@ -1,5 +1,5 @@
 // issue to many rerenders on useEffect on boot
-
+import '../css/RainfallBarChart.css';
 import { useState, useEffect } from "react";
 import type { RootState } from "../app/store";
 import { useAppSelector} from "../app/hooks";
@@ -11,6 +11,7 @@ import {
     VerticalGridLines,
     HorizontalGridLines,
     VerticalBarSeries,
+    ChartLabel,
   } from "react-vis";
 
 export const RainfallBarChart = () => {
@@ -65,15 +66,37 @@ console.log("rerender2")
   }, [currentRainfall]);
 
   return (
-    <XYPlot xType="ordinal" width={1200} height={250} xDistance={100} yDistance={100}>
+    <XYPlot className="RainfallBarChart__XYPlot" margin={{left: 100, bottom: 100}} xType="ordinal" width={1200} height={250} xDistance={100} yDistance={100}>
     <VerticalGridLines />
     <HorizontalGridLines />
     <XAxis />
     <YAxis />
+    <ChartLabel
+    text="Rainfall/mm"
+    className="alt-y-label"
+    includeMargin={false}
+    xPercent={-0.06}
+    yPercent={0.2}
+    style={{
+      transform: 'rotate(-90)',
+      textAnchor: 'end'
+    }}
+    />
+      <ChartLabel
+    text="Time of day/ hour"
+    className="alt-x-label"
+    includeMargin={false}
+    xPercent={0.5}
+    yPercent={1.5}
+    style={{
+      textAnchor: 'end'
+    }}
+    />
     <VerticalBarSeries
       barWidth={1}
       className="vertical-bar-series-example"
       data={chartRainfallData}
+      color={"blue"}
     />
   </XYPlot>
   )
