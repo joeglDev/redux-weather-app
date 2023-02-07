@@ -58,7 +58,7 @@ const [chartRainfallData, setChartRainfallData] = useState([
       "22:00",
       "24:00",
     ];
-console.log("rerender2")
+    
     const processedData = currentRainfall.map((rainfall, index) => {
       return { x: labels[index], y: rainfall };
     });
@@ -93,7 +93,7 @@ console.log("rerender2")
     }}
     />
     <VerticalBarSeries
-      barWidth={1}
+      barWidth={0.8}
       className="vertical-bar-series-example"
       data={chartRainfallData}
       color={"blue"}
