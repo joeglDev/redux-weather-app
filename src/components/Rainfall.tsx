@@ -40,7 +40,8 @@ export const Rainfall = () => {
   return (
     <section>
       <Card style={{ border: "none", boxShadow: "none" }}>
-        <RainfallBarChart></RainfallBarChart>
+        <h3 className="Rainfall__Card__h3">Hourly Rainfall</h3>
+        <RainfallBarChart ></RainfallBarChart>
       </Card>
     </section>
   );
