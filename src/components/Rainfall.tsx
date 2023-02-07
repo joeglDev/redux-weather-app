@@ -8,8 +8,6 @@ import '../css/Rainfall.css';
 import "chart.js/auto";
 import { Bar } from "react-chartjs-2";
 import { Card, CardContent } from "@mui/material";
-import { green } from "@mui/material/colors";
-import { isWhiteSpaceLike } from "typescript";
 
 export const Rainfall = () => {
   //redux states
