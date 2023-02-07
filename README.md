@@ -23,3 +23,7 @@ In console run the command `npm i` then `npm run start`.
 - MUI Material: V 5.11.6
 - React Chart JS 2: V 5.2.0
 
+## Notes
+
+For the moment times shown are on graphs are given in UTC. 
+

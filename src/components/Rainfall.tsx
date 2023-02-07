@@ -1,12 +1,15 @@
-import { Card, CardContent } from "@mui/material";
 import { useEffect } from "react";
 import { useAppSelector, useAppDispatch } from "../app/hooks";
 import type { RootState } from "../app/store";
 import { updateRainfall } from "../features/rainfall/rainfallSlice";
 import { fetchRainfall } from "../models/apiQueries";
+import '../css/Rainfall.css';
 //chart js
 import "chart.js/auto";
 import { Bar } from "react-chartjs-2";
+import { Card, CardContent } from "@mui/material";
+import { green } from "@mui/material/colors";
+import { isWhiteSpaceLike } from "typescript";
 
 export const Rainfall = () => {
   //redux states
@@ -49,6 +52,7 @@ export const Rainfall = () => {
   //Bar chart
   const options = {
     responsive: true,
+    
     plugins: {
       legend: {
         position: "top" as const,
@@ -56,7 +60,11 @@ export const Rainfall = () => {
       title: {
         display: true,
         text: "Today's Rainfall",
+        color: 'white',
       },
+     
+        labels: {font: {fontColor: 'white'},}
+    
     },
   };
 
@@ -96,18 +104,33 @@ export const Rainfall = () => {
         backgroundColor: "#4169E1",
       },
     ],
+  
   };
+
+  const plugin = [{
+    beforeDraw: function(Bar: any) {
+      const ctx = Bar.ctx;
+
+      const chartArea = Bar.chartArea;
+
+  
+      // Chart background
+     
+    
+      ctx.fillStyle = '#18191a';
+      ctx.fillRect(chartArea.left - chartArea.left, 8 * (chartArea.left) ,
+        chartArea.right , -10*(chartArea.top) );
+    }, 
+    id: 'Bar',
+  }];
 
   return (
     <section>
-      <Card>
-        <CardContent
-          style={{ backgroundColor: "#18191a" }}
-          sx={{ width: "30rem", height: "15rem" }}
-        >
-          <Bar options={options} data={data} />
-        </CardContent>
-      </Card>
+     <Card style={{ border: "none", boxShadow: "none" }}>
+      <CardContent style={{backgroundColor:'#18191a' }} sx={{width: '30rem', height: '15rem'}}>
+          <Bar plugins={plugin} options={options} data={data} />
+          </CardContent>
+          </Card>
     </section>
   );
 };
