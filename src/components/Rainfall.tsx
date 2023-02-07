@@ -28,7 +28,6 @@ export const Rainfall = () => {
   const currentRainfall = useAppSelector((state: RootState) => {
     return state.rainfall;
   });
-  console.log(currentRainfall);
 
   //variables
   const dispatch = useAppDispatch();
