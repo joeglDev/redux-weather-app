@@ -20,8 +20,8 @@ export const CurrentLocationBlock = () => {
     <section>
        <Card />
        <CardContent  style={{backgroundColor:'#18191a'}} sx={{width: '15rem', height: '15rem'}}>
-       <Typography style={{backgroundColor:'#18191a', color: 'white', fontSize: 30 }} variant="h1">Current Location</Typography>
-        <Typography style={{backgroundColor:'#18191a', color: 'white', fontSize: 40, textAlign: 'center'}} variant="body1">{`${currentLocation.name}, ${currentLocation.country}`}</Typography>
+       <Typography tabIndex={0} style={{backgroundColor:'#18191a', color: 'white', fontSize: 30 }} variant="h1">Current Location</Typography>
+        <Typography tabIndex={0} style={{backgroundColor:'#18191a', color: 'white', fontSize: 40, textAlign: 'center'}} variant="body1">{`${currentLocation.name}, ${currentLocation.country}`}</Typography>
        </CardContent>
       <Card />
       

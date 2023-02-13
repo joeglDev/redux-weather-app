@@ -126,6 +126,7 @@ export const CurrentWeather = () => {
         sx={{ width: "15rem", height: "15rem" }}
       >
         <Typography
+          tabIndex={0}
           style={{ backgroundColor: "#18191a", color: "white", fontSize: 30 }}
           variant="h1"
         >
@@ -133,6 +134,7 @@ export const CurrentWeather = () => {
         </Typography>
 
         <Typography
+          tabIndex={0}
           style={{
             backgroundColor: "#18191a",
             color: "white",
@@ -145,6 +147,7 @@ export const CurrentWeather = () => {
         </Typography>
 
         <Typography
+          tabIndex={0}
           style={{
             backgroundColor: "#18191a",
             color: "white",
@@ -157,6 +160,7 @@ export const CurrentWeather = () => {
         </Typography>
 
         <Typography
+          tabIndex={0}
           style={{
             backgroundColor: "#18191a",
             color: "white",

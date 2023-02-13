@@ -60,14 +60,21 @@ export const Rainfall = () => {
     return (
       <section>
         <Card style={{ border: "none", boxShadow: "none" }}>
-        <CardContent
-        style={{ backgroundColor: "#18191a" }}
-        sx={{ width: "15rem", height: "15rem" }}
-      >
-          <Typography
-          style={{ backgroundColor: "#18191a", color: "white", fontSize: 30 }}
-          variant="h1"
-        >It is not currectly raining.</Typography>
+          <CardContent
+            style={{ backgroundColor: "#18191a" }}
+            sx={{ width: "15rem", height: "15rem" }}
+          >
+            <Typography
+              tabIndex={0}
+              style={{
+                backgroundColor: "#18191a",
+                color: "white",
+                fontSize: 30,
+              }}
+              variant="h1"
+            >
+              It is not currectly raining.
+            </Typography>
           </CardContent>
         </Card>
       </section>
