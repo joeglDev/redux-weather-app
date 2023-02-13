@@ -42,6 +42,21 @@ export const RainfallTable = () => {
     "24:00",
   ];
 
+ //methods
+ let keyValueForTable = 0;
+let count = 0;
+let tabIndexValue = 1;
+/**
+ * calculates the tabIndex of the table cells so that tabIndex increments in a down one than up right diagonal up manner. 
+ * THis means that when table is navigated using the tab key than hour label followed by rainfall label is displayed.
+ * 
+ * @returns {number} tabIndexValue - a number representing the value of the table cell's tabIndex
+ */
+ const changeTabIndexValue = () => {
+   if (count === 0) { count++;} else if (count <= 23 && count > 0) {count++; tabIndexValue +=2;} else if (count === 24 ) {count++;tabIndexValue = 1} else if (count > 24) {tabIndexValue +=2};
+   return tabIndexValue
+ }
+
     return (
         <section>
             <h3 className="RainfallTable__h3">{"Hourly rainfall (tabular)"}</h3>
@@ -49,15 +64,17 @@ export const RainfallTable = () => {
                 <caption>Hourly rainfall of the day in mm of rain per hour.</caption>
   <tr>
     {labels.map((label) => {
+        keyValueForTable++;
         return (
-            <th>{label}</th>
+            <th key={keyValueForTable}tabIndex={changeTabIndexValue()}>{label}</th>
         )
     })}
   </tr>
   <tr>
     {currentRainfall.map((data) => {
+          keyValueForTable++;
         return (
-            <td>{data}</td>
+            <td key={keyValueForTable} tabIndex={changeTabIndexValue()}>{data}</td>
         )
     })}
   </tr>
