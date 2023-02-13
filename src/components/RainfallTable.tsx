@@ -74,7 +74,7 @@ let tabIndexValue = 1;
     {currentRainfall.map((data) => {
           keyValueForTable++;
         return (
-            <td key={keyValueForTable} tabIndex={changeTabIndexValue()}>{data}</td>
+            <td className={`RainfallTable__table__cell__${data < 5 ? "low": data < 10 ? "mid" : "high"}`} key={keyValueForTable} tabIndex={changeTabIndexValue()}>{data}</td>
         )
     })}
   </tr>

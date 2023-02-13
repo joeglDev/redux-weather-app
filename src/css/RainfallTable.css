@@ -1,3 +1,16 @@
 .RainfallTable__h3 {
     text-align: center;
 }
+
+.RainfallTable__table__cell__low {
+    background-color: #ccf9ff;
+}
+
+.RainfallTable__table__cell__mid {
+    background-color: #55d0ff;
+}
+
+.RainfallTable__table__cell__high {
+    background-color: #0080bf;
+    color: white;
+}
