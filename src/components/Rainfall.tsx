@@ -7,6 +7,7 @@ import { fetchRainfall } from "../models/apiQueries";
 import "../css/Rainfall.css";
 import { Card, CardContent, Typography } from "@mui/material";
 import { RainfallBarChart } from "./RainfallBarChart";
+import { RainfallTable } from "./RainfallTable";
 
 export const Rainfall = () => {
   //states
@@ -51,6 +52,7 @@ export const Rainfall = () => {
         <Card style={{ border: "none", boxShadow: "none" }}>
           <h3 className="Rainfall__Card__h3">Hourly Rainfall</h3>
           <RainfallBarChart></RainfallBarChart>
+          <RainfallTable></RainfallTable>
         </Card>
       </section>
     );
