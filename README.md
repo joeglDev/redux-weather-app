@@ -9,6 +9,7 @@ This weather app greatly improves upon my last attempt by encorporating a differ
 - React replaces plain HTML / JavaScript.
 - Redux-toolkit for state management.
 - A mixture of Material UI library alongside plain CSS.
+- Implementing Front-End testing using Cypress.
 
 ## Run locally
 
@@ -22,6 +23,7 @@ In console run the command `npm i` then `npm run start`.
 - React-redux: V 8.0.5
 - MUI Material: V 5.11.6
 - React-vis: V 1.11.12
+- Cypress: V 12.6.0
 
 ## Notes
 
