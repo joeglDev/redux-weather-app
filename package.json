@@ -45,6 +45,7 @@
     ]
   },
   "devDependencies": {
-    "@types/react-vis": "^1.11.11"
+    "@types/react-vis": "^1.11.11",
+    "cypress": "^12.6.0"
   }
 }
