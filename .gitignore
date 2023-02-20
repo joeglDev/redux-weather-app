@@ -28,4 +28,5 @@ package-lock.json
 todo.txt
 
 #testing
-cypress
+cypress/fixtures
+cypress/support
