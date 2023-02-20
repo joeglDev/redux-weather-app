@@ -1,4 +1,5 @@
-//import 'cypress';
+/// <reference types="cypress" />
+// @ts-check
 
 describe('template spec', () => {
   it('passes', () => {
