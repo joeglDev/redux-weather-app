@@ -14,3 +14,7 @@
     background-color: #0080bf;
     color: white;
 }
+
+.RainfallTable__container {
+    overflow-x: auto;
+}

@@ -60,6 +60,7 @@ let tabIndexValue = 1;
     return (
         <section>
             <h3 className="RainfallTable__h3">{"Hourly rainfall (tabular)"}</h3>
+            <div className="RainfallTable__container">
             <table>
                 <caption>Hourly rainfall of the day in mm of rain per hour.</caption>
   <tr>
@@ -79,6 +80,7 @@ let tabIndexValue = 1;
     })}
   </tr>
   </table>
+  </div>
         </section>
     )
 }

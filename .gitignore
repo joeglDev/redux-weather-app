@@ -26,3 +26,6 @@ yarn-error.log*
 tsconfig.json
 package-lock.json
 todo.txt
+
+#testing
+cypress
