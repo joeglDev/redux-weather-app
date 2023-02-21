@@ -1,5 +1,34 @@
+.RainfallTable__section {
+    background-color: #18191a;
+    color: white;
+    text-align: center;
+    margin: 1rem;
+}
+
 .RainfallTable__h3 {
     text-align: center;
+    background-color: #18191a;
+    color: white;
+}
+
+.RainfallTable__section__table {
+    background-color: #18191a;
+    color: white;
+}
+
+.RainfallTable__section__table__caption {
+    background-color: #18191a;
+    color: white;
+}
+
+.RainfallTable__Section__cell {
+    background-color: #18191a;
+    color: white;
+}
+
+th {
+    background-color: #18191a;
+    color: white;
 }
 
 .RainfallTable__table__cell__low {
@@ -13,8 +42,4 @@
 .RainfallTable__table__cell__high {
     background-color: #0080bf;
     color: white;
-}
-
-.RainfallTable__container {
-    overflow-x: auto;
 }

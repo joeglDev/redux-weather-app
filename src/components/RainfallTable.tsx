@@ -58,11 +58,10 @@ let tabIndexValue = 1;
  }
 
     return (
-        <section>
+        <section className="RainfallTable__section">
             <h3 className="RainfallTable__h3">{"Hourly rainfall (tabular)"}</h3>
-            <div className="RainfallTable__container">
-            <table>
-                <caption>Hourly rainfall of the day in mm of rain per hour.</caption>
+            <table className="RainfallTable__section__table">
+                <caption className="RainfallTable__section__table__caption">Hourly rainfall of the day in mm of rain per hour.</caption>
   <tr>
     {labels.map((label) => {
         keyValueForTable++;
@@ -80,7 +79,6 @@ let tabIndexValue = 1;
     })}
   </tr>
   </table>
-  </div>
         </section>
     )
 }
