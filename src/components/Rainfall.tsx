@@ -6,12 +6,12 @@ import { updateRainfall } from "../features/rainfall/rainfallSlice";
 import { fetchRainfall } from "../models/apiQueries";
 import "../css/Rainfall.css";
 import { Card, CardContent, Typography } from "@mui/material";
-import { RainfallBarChart } from "./RainfallBarChart";
-import { RainfallTable } from "./RainfallTable";
+import {RainfallData} from './RainfallData';
 
 export const Rainfall = () => {
   //states
   const [isRaining, setIsRaining] = useState(false);
+  const [displayRainfall, setDisplayRainfall] = useState(true);
 
   //redux states
   /**
@@ -49,11 +49,15 @@ export const Rainfall = () => {
   if (isRaining) {
     return (
       <section className="Rainfall__section">
-        <Card style={{ border: "none", boxShadow: "none", margin:"0", padding:"0", backgroundColor: "#18191a" }}>        
-          <h3 className="Rainfall__Card__h3">Hourly Rainfall</h3>
-          <RainfallBarChart></RainfallBarChart>
-          <RainfallTable></RainfallTable>
-        </Card>
+        <button
+          className="Rainfall__section__button"
+          onClick={() => {
+            setDisplayRainfall(!displayRainfall);
+          }}
+        >
+          View hourly rainfall?
+        </button>
+        <RainfallData displayRainfall={displayRainfall}></RainfallData>
       </section>
     );
   } else {
