@@ -8,3 +8,23 @@
     background-color: #18191a;
 }
 
+.Rainfall__section__button {
+    margin: 1rem 50% 1rem 42%;
+    width: 10rem;
+    height: 10%;
+    border: none;
+    font-weight: bold;
+}
+
+.Rainfall__section__button:hover {
+    background-color: rgb(55, 110, 230);
+}
+
+.clicked {
+    background-color: rgb(55, 110, 230);
+    position: relative;
+    left: 17.5%;
+    top: 25%;
+    margin: 0;
+}
+

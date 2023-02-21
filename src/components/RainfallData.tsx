@@ -14,12 +14,21 @@ export const RainfallData = ({displayRainfall} : {displayRainfall: boolean}) => 
             backgroundColor: "#18191a",
           }}
         >
-          <h3 className="Rainfall__Card__h3">Hourly Rainfall</h3>
+          
           <RainfallBarChart></RainfallBarChart>
           <RainfallTable></RainfallTable>
         </Card>
       );
     } else {
-      return <></>;
+      return  <Card
+      style={{
+        border: "none",
+        boxShadow: "none",
+        margin: "0",
+        padding: "0",
+        backgroundColor: "#18191a",
+      }}
+      sx={{width: '15rem', height: '15rem'}}
+    />
     }
   };

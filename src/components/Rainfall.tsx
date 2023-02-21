@@ -1,4 +1,4 @@
-//add table for rainfall
+//fix issue with height when hidden
 import { useEffect, useState } from "react";
 import { useAppSelector, useAppDispatch } from "../app/hooks";
 import type { RootState } from "../app/store";
@@ -6,7 +6,7 @@ import { updateRainfall } from "../features/rainfall/rainfallSlice";
 import { fetchRainfall } from "../models/apiQueries";
 import "../css/Rainfall.css";
 import { Card, CardContent, Typography } from "@mui/material";
-import {RainfallData} from './RainfallData';
+import { RainfallData } from "./RainfallData";
 
 export const Rainfall = () => {
   //states
@@ -49,13 +49,14 @@ export const Rainfall = () => {
   if (isRaining) {
     return (
       <section className="Rainfall__section">
+        <h3 className="Rainfall__Card__h3">Hourly Rainfall</h3>
         <button
-          className="Rainfall__section__button"
+          className={`Rainfall__section__button ${!displayRainfall ? 'clicked' : ''}`}
           onClick={() => {
             setDisplayRainfall(!displayRainfall);
           }}
         >
-          View hourly rainfall?
+          Hide hourly rainfall
         </button>
         <RainfallData displayRainfall={displayRainfall}></RainfallData>
       </section>
