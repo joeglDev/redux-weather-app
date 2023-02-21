@@ -64,10 +64,10 @@ const [chartRainfallData, setChartRainfallData] = useState([
     });
     setChartRainfallData(processedData);
   }, [currentRainfall]);
-
+ 
   return (
-    <XYPlot className="RainfallBarChart__XYPlot" margin={{left: 100, bottom: 100}} xType="ordinal" width={1200} height={250} xDistance={100} yDistance={100}>
-    <VerticalGridLines />
+    <XYPlot style={{margin:"0", backgroundColor: "#18191a", fill:"white"}} className="RainfallBarChart__XYPlot" margin={{left: 100, bottom: 100}} xType="ordinal" width={1200} height={250} xDistance={100} yDistance={100}>
+    <VerticalGridLines/>
     <HorizontalGridLines />
     <XAxis />
     <YAxis />
@@ -79,7 +79,7 @@ const [chartRainfallData, setChartRainfallData] = useState([
     yPercent={0.2}
     style={{
       transform: 'rotate(-90)',
-      textAnchor: 'end'
+      textAnchor: 'end',
     }}
     />
       <ChartLabel

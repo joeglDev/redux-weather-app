@@ -1,3 +1,6 @@
-.RainfallBarChart__XYPlot {
-    margin: auto;
+
+
+.rv-xy-plot > .rv-xy-plot__inner {
+    fill: #19191a;
+  
 }
