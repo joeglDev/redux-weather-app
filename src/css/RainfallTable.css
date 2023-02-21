@@ -19,6 +19,7 @@
 .RainfallTable__section__table__caption {
     background-color: #18191a;
     color: white;
+    font-weight: bold;
 }
 
 .RainfallTable__Section__cell {

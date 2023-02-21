@@ -59,7 +59,6 @@ let tabIndexValue = 1;
 
     return (
         <section className="RainfallTable__section">
-            <h3 className="RainfallTable__h3">{"Hourly rainfall (tabular)"}</h3>
             <table className="RainfallTable__section__table">
                 <caption className="RainfallTable__section__table__caption">Hourly rainfall of the day in mm of rain per hour.</caption>
   <tr>

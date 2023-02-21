@@ -49,7 +49,7 @@ export const Rainfall = () => {
   if (isRaining) {
     return (
       <section className="Rainfall__section">
-        <Card style={{ border: "none", boxShadow: "none" }}>        
+        <Card style={{ border: "none", boxShadow: "none", margin:"0", padding:"0", backgroundColor: "#18191a" }}>        
           <h3 className="Rainfall__Card__h3">Hourly Rainfall</h3>
           <RainfallBarChart></RainfallBarChart>
           <RainfallTable></RainfallTable>
