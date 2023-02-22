@@ -16,10 +16,13 @@ describe("visits website", () => {
   });
 });
 
+//.contains
 describe("Location selections", () => {
-  it('finds the content "h1"', () => {
+  it('finds the content "h1"and its "a" link element', () => {
     cy.visit(Globals.getLOCALHOST());
-
-    cy.contains("Weather dashboard byJoe Gilbert");
+    //h1
+    cy.contains("Weather dashboard by");
+    cy.contains("a","Joe Gilbert").invoke('attr','href')
+    .should('include','https://github.com/joeglDev')
   });
 });
