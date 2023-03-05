@@ -30,3 +30,5 @@ todo.txt
 #testing
 cypress/fixtures
 cypress/support
+cypress/screenshots
+cypress/videos

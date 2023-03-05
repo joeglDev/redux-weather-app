@@ -16,4 +16,4 @@ class GLOBALS {
   }
 }
 
-export const Globals = new GLOBALS("http://localhost:3000/", "https://github.com/joeglDev");////
+export const Globals = new GLOBALS("http://localhost:3000/", "https://github.com/joeglDev");
